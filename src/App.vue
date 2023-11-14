@@ -22,15 +22,15 @@
       <v-container>
         <v-col> <!--  Onze container heeft één column-->
           <v-row>
-            <h1>Rij met content één</h1>
+            <h1>Voorbeeldrij 1</h1>
             <ProductSalesChart></ProductSalesChart>
           </v-row>
           <v-row>
-            <h1>Rij met content twee</h1>
+            <h1>Voorbeeldrij 2</h1>
             <PopulationChart></PopulationChart>
           </v-row>
           <v-row>
-            <h1>Rij met content drie</h1>
+            <h1>Voorbeeldrij 3</h1>
           </v-row>
         </v-col>
 
