@@ -1,26 +1,68 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <v-app id="inspire" >
+    <v-navigation-drawer v-model="drawer" class="bg-red">
+      <v-list-item title="My Application" subtitle="AAD Informatica Frontend"></v-list-item>
+      <v-divider></v-divider>
+      <v-list-item link title="List Item 1"></v-list-item>
+      <v-list-item link title="List Item 2"></v-list-item>
+      <v-list-item link title="List Item 3"></v-list-item>          
+    </v-navigation-drawer>
+
+    <v-app-bar class="bg-red-lighten-1">
+      <v-app-bar-nav-icon @click="drawer = !drawer">
+        <v-icon icon="mdi-menu" size="large"></v-icon>
+      </v-app-bar-nav-icon>
+
+      <v-app-bar-title>Applicatie naam</v-app-bar-title>
+    </v-app-bar>
+
+    <v-main class="bg-red-lighten-5">
+
+      <!-- Maak een container (grid) aan voor onze content  -->
+      <v-container>
+        <v-col> <!--  Onze container heeft één column-->
+          <v-row>
+            <h1>Rij met content één</h1>
+            <ProductSalesChart></ProductSalesChart>
+          </v-row>
+          <v-row>
+            <h1>Rij met content twee</h1>
+            <PopulationChart></PopulationChart>
+          </v-row>
+          <v-row>
+            <h1>Rij met content drie</h1>
+          </v-row>
+        </v-col>
+
+      </v-container>    
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  import { ref } from 'vue'
+  import ProductSalesChart from '@/components/ProductSalesChart.vue'
+  import PopulationChart from './components/PopulationChart.vue'
+
+  const drawer = ref(null)
+
+  export default {
+    name: 'App',
+    components: {
+      ProductSalesChart,
+      PopulationChart
+    },
+    data() {
+      return {
+        drawer: null
+      }
+    } 
+
   }
-}
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
+
 </style>
